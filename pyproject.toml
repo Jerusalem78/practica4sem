@@ -1,9 +1,22 @@
 [project]
 name = "practica"
 version = "0.1.0"
-description = "Add your description here"
+description = "Учебная практика по компьютерному зрению"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
     "opencv-python>=4.13.0.92",
 ]
+
+[project.scripts]
+practica = "practica.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,12 @@
+project:
+  task: object_detection
+  dataset: coco_like
+  image_size: 640
+  batch_size: 8
+  epochs: 10
+models:
+  - YOLO
+  - Faster R-CNN
+  - SSD
+  - EfficientDet
+  - DETR
