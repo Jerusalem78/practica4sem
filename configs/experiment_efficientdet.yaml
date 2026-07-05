@@ -1,0 +1,20 @@
+# configs/experiment_efficientdet.yaml
+
+model_name: efficientdet
+arch: tf_efficientdet_d0
+pretrained: true
+
+data_config: configs/kitti_data.yaml
+
+hyperparameters:
+  epochs: 30
+  batch_size: 8
+  imgsz: 512
+  optimizer: AdamW
+  lr: 0.0004
+  weight_decay: 0.00001
+  seed: 42
+
+output:
+  project_dir: results/efficientdet
+  run_name: efficientdet_kitti_run1

@@ -1,9 +1,17 @@
 project:
+  subject_area: road_scene_analysis
   task: object_detection
+  task_description: detection of objects in street and road images
   dataset: coco_like
+  dataset_notes: COCO-style object detection benchmark
   image_size: 640
-  batch_size: 8
-  epochs: 10
+  batch_size: 4
+  epochs: 7
+  metrics:
+    - Precision
+    - Recall
+    - F1
+    - mAP@0.5
 models:
   - YOLO
   - Faster R-CNN

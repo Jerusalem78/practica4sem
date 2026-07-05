@@ -10,7 +10,7 @@ from .project_files import ensure_project_structure
 @dataclass
 class ProjectConfig:
     root: Path
-    dataset_name: str = "COCO-like detection benchmark"
+    dataset_name: str = "KITTI object detection benchmark"
     task: str = "object_detection"
     models: List[str] = field(
         default_factory=lambda: [
@@ -42,7 +42,7 @@ def run_project(config: ProjectConfig) -> Dict[str, object]:
         "root": str(config.root),
         "created_paths": [str(path) for path in structure],
         "next_steps": [
-            "download a dataset into data/raw",
+            "convert KITTI data into data/processed",
             "add annotations converter",
             "plug in 5 model wrappers",
             "run training and export metrics to results/",
