@@ -39,9 +39,3 @@ This repository contains a computer vision pipeline for object detection experim
 3. Подключить 5 моделей детекции.
 4. Запустить обучение и сохранить метрики в `results/`.
 
-## Запуск
-
-```bash
-uv run practica --mode summary
-uv run practica --mode scaffold
-```
