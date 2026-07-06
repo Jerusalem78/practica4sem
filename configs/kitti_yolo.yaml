@@ -1,0 +1,10 @@
+# configs/kitti_yolo.yaml
+
+path: ../data/processed
+train: train/images
+val: val/images
+
+names:
+  0: Car
+  1: Pedestrian
+  2: Cyclist

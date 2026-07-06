@@ -1,0 +1,21 @@
+# configs/experiment_faster_rcnn.yaml
+
+model_name: faster_rcnn
+backbone: resnet50_fpn
+pretrained: true
+
+data_config: configs/kitti_data.yaml
+
+hyperparameters:
+  epochs: 20
+  batch_size: 4
+  imgsz: 800
+  optimizer: SGD
+  lr: 0.005
+  momentum: 0.9
+  weight_decay: 0.0005
+  seed: 42
+
+output:
+  project_dir: results/logs
+  run_name: faster_rcnn_kitti_run1

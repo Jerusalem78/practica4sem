@@ -1,0 +1,34 @@
+# configs/experiment_yolo.yaml
+
+model_name: yolo
+pretrained_weights: yolov8n.pt
+
+data_config: configs/kitti_yolo.yaml
+
+hyperparameters:
+  epochs: 10
+  batch_size: 32
+  imgsz: 640
+  optimizer: Adam
+  lr0: 0.001
+  seed: 42
+  presets:
+    - epochs: 5
+      batch_size: 32
+      lr: 0.001
+    - epochs: 5
+      batch_size: 16
+      lr: 0.01
+    - epochs: 5
+      batch_size: 16
+      lr: 0.001
+      optimizer: SGD
+    - epochs: 5
+      batch_size: 16
+      lr: 0.001
+
+output:
+  project_dir: results/logs
+  run_name: yolov8_kitti_run1
+
+

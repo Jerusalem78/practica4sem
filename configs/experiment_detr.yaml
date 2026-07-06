@@ -1,0 +1,21 @@
+# configs/experiment_detr.yaml
+
+model_name: detr
+pretrained_checkpoint: facebook/detr-resnet-50
+backbone: resnet50
+
+data_config: configs/kitti_data.yaml
+
+hyperparameters:
+  epochs: 50
+  batch_size: 4
+  imgsz: 800
+  optimizer: AdamW
+  lr: 0.00001
+  lr_backbone: 0.000001
+  weight_decay: 0.0001
+  seed: 42
+
+output:
+  project_dir: results/logs
+  run_name: detr_kitti_run1

@@ -1,0 +1,38 @@
+# configs/experiment_ssd.yaml
+
+model_name: ssd
+backbone: vgg16
+pretrained: true
+
+data_config: configs/kitti_data.yaml
+
+hyperparameters:
+  epochs: 5
+  batch_size: 16
+  imgsz: 300
+  optimizer: SGD
+  lr: 0.001
+  momentum: 0.9
+  weight_decay: 0.0005
+  seed: 42
+  presets:
+    - epochs: 5
+      batch_size: 16
+      lr: 0.001
+      optimizer: SGD
+    - epochs: 5
+      batch_size: 32
+      lr: 0.001
+      optimizer: SGD
+    - epochs: 5
+      batch_size: 16
+      lr: 0.01
+      optimizer: SGD
+    - epochs: 5
+      batch_size: 16
+      lr: 0.0001
+      optimizer: Adam
+
+output:
+  project_dir: results/logs
+  run_name: ssd_kitti_run1
